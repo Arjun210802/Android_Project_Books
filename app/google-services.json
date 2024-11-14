@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623167107263",
+    "project_id": "uploadtry-b6baa",
+    "storage_bucket": "uploadtry-b6baa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623167107263:android:ee6c2ec5d96a1711fcd60a",
+        "android_client_info": {
+          "package_name": "com.example.project_books"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCozdr53nGvIO1f8DlYLPyOVcr4CDDiq-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
