@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
         if (user != null) {
             currentUserId = user.getUid();
         }
+
         TextView userNameTextView = findViewById(R.id.userNameTextView);
-        String userName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-        userNameTextView.setText("Welcome, " + userName + "!");
+        String userName = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        String[] name = userName.split("@");
+        userNameTextView.setText("Welcome, " + name[0] + "!");
 
         Button logoutButton = findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(view -> {
@@ -174,11 +176,17 @@ public class MainActivity extends AppCompatActivity {
         } else {
             editButton.setVisibility(View.GONE);
             deleteButton.setVisibility(View.GONE);
+
+            // Set click listener for books listed by others
+            bookView.setOnClickListener(v -> {
+                goToPurchaseDetails(book); // Navigate to purchase page
+            });
         }
 
         // Add to parent layout
         bookListLayout.addView(bookView);
     }
+
 
     private void openEditBookDialog(Book book) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -251,8 +259,9 @@ public class MainActivity extends AppCompatActivity {
     // Method to navigate to PurchaseDetailsActivity
     private void goToPurchaseDetails(Book book) {
         Intent intent = new Intent(MainActivity.this, PurchaseDetailsActivity.class);
-        intent.putExtra("bookId", book.getId()); // Pass book ID
-        intent.putExtra("bookTitle", book.getTitle()); // Pass book title
+        intent.putExtra("BOOK_TITLE", book.getTitle());
+        intent.putExtra("BOOK_AUTHOR", book.getAuthor());
+        intent.putExtra("BOOK_PRICE", book.getPrice());
         startActivity(intent);
     }
 }

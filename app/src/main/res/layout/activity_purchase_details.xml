@@ -4,20 +4,108 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Book Details Section -->
     <TextView
         android:id="@+id/bookTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Book Title"
         android:textSize="24sp"
-        android:layout_gravity="center_horizontal" />
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"/>
 
     <TextView
-        android:id="@+id/purchaseInstructionsTextView"
+        android:id="@+id/bookAuthorTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="Enter your purchase details here..."
-        android:textSize="18sp" />
+        android:text="Author Name"
+        android:textSize="18sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="8dp"/>
 
+    <TextView
+        android:id="@+id/bookPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="18sp"
+        android:textColor="#00796B"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <!-- User's Details for Purchase -->
+    <EditText
+        android:id="@+id/userNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/userAddressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your address"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/userPhoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your phone number"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Purchase or Rent Option -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/radioPurchase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purchase" />
+
+        <RadioButton
+            android:id="@+id/radioRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent" />
+
+    </RadioGroup>
+
+    <!-- Rent Duration Section (Only visible when Rent is selected) -->
+    <EditText
+        android:id="@+id/rentDaysEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter number of rental days"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/rentalAmountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rental Amount: $0.00"
+        android:textSize="18sp"
+        android:textColor="#00796B"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:visibility="gone"/>
+
+    <!-- Purchase Button -->
+    <Button
+        android:id="@+id/purchaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy Now"
+        android:layout_gravity="center"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>
