@@ -6,14 +6,24 @@ public class Book {
     private String author;
     private String price; // String type for price
     private String publisherId;
+    private String imageUrl;
 
-    // Constructor that initializes all fields
-    public Book(String id, String title, String author, String price, String publisherId) {
+
+    public Book(String id, String title, String author, String price, String publisherId, String imageUrl) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.price = price;
         this.publisherId = publisherId;
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     // Empty constructor for Firebase
