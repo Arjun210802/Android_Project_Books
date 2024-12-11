@@ -21,9 +21,6 @@
             android:name=".ItemBookActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminDashboardActivity"
-            android:exported="false" />
-        <activity
             android:name=".SellBookActivity"
             android:exported="false" />
         <activity
